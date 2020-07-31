@@ -1,19 +1,20 @@
-import { ADD_TODO, TOGGLE_TODO } from '../actions'
+import { addTodo, toggleTodo} from "actions"
 
 const todos = (state = [], action) => {
   switch (action.type) {
-    case ADD_TODO:
+    case addTodo.type:
+      console.log(action);
       return [
         ...state,
         {
-          id: action.id,
-          text: action.text,
+          id: action.payload.id,
+          text: action.payload.text,
           completed: false
         }
       ]
-    case TOGGLE_TODO:
+    case toggleTodo.type:
       return state.map(todo =>
-        (todo.id === action.id)
+        (todo.id === action.payload.id)
           ? {...todo, completed: !todo.completed}
           : todo
       )
