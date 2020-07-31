@@ -10,21 +10,9 @@ export const addTodo = createAction('ADD_TODO', (text) => {
   }
 })
 
-export const setVisibilityFilter = createAction('SET_VISIBILITY_FILTER', (filter) => {
-  return {
-    payload: {
-      filter
-    }
-  }
-})
+export const setVisibilityFilter = createAction('SET_VISIBILITY_FILTER')
 
-export const toggleTodo = createAction('TOGGLE_TODO', (id) => {
-  return {
-    payload: {
-      id
-    }
-  }
-})
+export const toggleTodo = createAction('TOGGLE_TODO')
 
 export const VisibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',

@@ -3,7 +3,6 @@ import { addTodo, toggleTodo} from "actions"
 const todos = (state = [], action) => {
   switch (action.type) {
     case addTodo.type:
-      console.log(action);
       return [
         ...state,
         {
@@ -14,7 +13,7 @@ const todos = (state = [], action) => {
       ]
     case toggleTodo.type:
       return state.map(todo =>
-        (todo.id === action.payload.id)
+        (todo.id === action.payload)
           ? {...todo, completed: !todo.completed}
           : todo
       )
