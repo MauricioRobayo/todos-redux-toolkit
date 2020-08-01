@@ -10,7 +10,10 @@ const todos = createReducer([], {
     })
   },
   [toggleTodo]: (state, action) => {
-    state[action.payload].completed = !state[action.payload].completed
+    const todo = state.find((state) => state.id = action.payload)
+    if (todo) {
+      todo.completed = !todo.completed
+    }
   }
 })
 
